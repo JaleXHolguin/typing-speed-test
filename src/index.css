@@ -1,1 +1,77 @@
 @import "tailwindcss";
+
+@theme {
+  --color-neutral-900: #121212;
+  --color-neutral-800: #262626;
+  --color-neutral-500: #717178;
+  --color-neutral-400: #949497;
+  --color-blue-600: #177dff;
+  --color-blue-400: #4ca6ff;
+  --color-red-500: #d64d5b;
+  --color-green-500: #4dd67b;
+  --color-yellow-400: #f4dc73;
+
+  --breakpoint-xl: 1216px;
+}
+
+@layer base {
+  body {
+    @apply bg-neutral-900 text-white;
+    font-family: "Sora Variable", sans-serif;
+  }
+}
+
+@utility wrapper {
+  @apply mx-auto w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-304;
+}
+
+@utility text-preset-1 {
+  font-weight: 700;
+  font-size: clamp(1.5rem, calc(1.054rem + 1.902vw), 2.5rem);
+  line-height: clamp(1.2, calc(1.129 + 0.304vw), 1.36);
+  letter-spacing: clamp(0.02rem, calc(0.018rem + 0.01vw), 0.025rem);
+}
+
+@utility text-preset-1-regular {
+  font-size: clamp(2rem, calc(1.777rem + 0.951vw), 2.5rem);
+  line-height: 1.36;
+  letter-spacing: 0.025rem;
+}
+
+@utility text-preset-2 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+@utility text-preset-3 {
+  font-size: clamp(1rem, calc(0.889rem + 0.476vw), 1.25rem);
+  line-height: 1.2;
+  letter-spacing: clamp(-0.037rem, calc(-0.041rem + 0.014vw), -0.03rem);
+}
+
+@utility text-preset-3-semibold {
+  font-weight: 600;
+  font-size: 1.25rem;
+  line-height: 1.2;
+  letter-spacing: -0.01875rem;
+}
+
+@utility text-preset-4 {
+  font-size: 1.125rem;
+  line-height: 1.2;
+  letter-spacing: -0.0375rem;
+}
+
+@utility text-preset-5 {
+  font-size: 1rem;
+  line-height: 1.2;
+  letter-spacing: -0.03rem;
+}
+
+@utility text-preset-6 {
+  font-size: 0.75rem;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
