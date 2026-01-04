@@ -82,13 +82,13 @@ const Shared = () => {
 						);
 					})}
 				</div>
-				<pre className="m-0 whitespace-pre-wrap font-preset-1 font-normal text-center">
+				<pre className="mb-8 whitespace-pre-wrap font-preset-1-regular text-center">
 					{chars.map((char, i) => {
 						const key = `char-${i}`;
 						const state = results[i] ?? "pending";
 
 						return (
-							<span key={key} className="char inline-block" data-state={state}>
+							<span key={key} className="char" data-state={state}>
 								{char}
 							</span>
 						);
