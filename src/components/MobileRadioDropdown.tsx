@@ -31,7 +31,7 @@ const MobileRadioDropdown = <T extends string>({
 			<DropdownMenu.Content
 				align="start"
 				sideOffset={7}
-				className="bg-neutral-800 rounded-lg overflow-hidden w-(--radix-popper-anchor-width)"
+				className="bg-neutral-800 rounded-lg overflow-hidden w-(--radix-popper-anchor-width) z-100"
 			>
 				<DropdownMenu.RadioGroup
 					value={value}

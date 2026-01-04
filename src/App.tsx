@@ -1,19 +1,11 @@
 import Header from "./components/Header";
-import StatsAndControls from "./components/StatsAndControls";
-import { useTypingTimer } from "./hooks/use-typing-timer";
+import Main from "./components/Main";
 
 function App() {
-	const { startTest } = useTypingTimer();
 	return (
 		<>
 			<Header />
-			<main className="wrapper">
-				<StatsAndControls />
-
-				<button type="button" onClick={startTest}>
-					Start
-				</button>
-			</main>
+			<Main />
 		</>
 	);
 }

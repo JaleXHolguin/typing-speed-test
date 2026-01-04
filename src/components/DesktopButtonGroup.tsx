@@ -37,7 +37,7 @@ const DesktopButtonGroup = <T extends string>({
 					<ToggleGroup.Item
 						key={key}
 						value={key}
-						className="px-2.25 py-1.25 h-7.75 text-white text-preset-5 rounded-md border border-neutral-500 outline-none hover:border-blue-600 data-[state=on]:border-blue-600 data-[state=off]:focus-visible:border-white focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-neutral-900 focus-visible:ring-blue-600 transition-colors not-disabled:cursor-pointer disabled:opacity-50 disabled:pointer-events-none"
+						className="px-2.25 py-1.25 h-7.75 text-white text-preset-5 rounded-md border border-neutral-500 hover:border-blue-600 data-[state=on]:border-blue-600 data-[state=off]:focus-visible:border-white custom-ring-focus transition-colors not-disabled:cursor-pointer disabled:opacity-50 disabled:pointer-events-none"
 					>
 						{label}
 					</ToggleGroup.Item>

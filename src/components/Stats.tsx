@@ -16,8 +16,8 @@ const Stats = () => {
 		<div className="flex items-center gap-x-6 w-full md:w-auto">
 			{/* WPM */}
 			<div className="max-sm:flex-1 flex flex-col items-center gap-y-2 sm:flex-row gap-x-3">
-				<span className="text-neutral-400 text-preset-3">WPM:</span>
-				<span className="text-preset-2 stat-value">
+				<span className="text-neutral-400 font-preset-3">WPM:</span>
+				<span className="font-preset-2 stat-value">
 					{status === "idle" ? "0" : wpm}
 				</span>
 			</div>
@@ -26,9 +26,9 @@ const Stats = () => {
 
 			{/* Accuracy */}
 			<div className="max-sm:flex-1 flex flex-col items-center gap-y-2 sm:flex-row gap-x-3">
-				<span className="text-neutral-400 text-preset-3">Accuracy:</span>
+				<span className="text-neutral-400 font-preset-3">Accuracy:</span>
 				<span
-					className="text-preset-2 stat-value"
+					className="font-preset-2 stat-value"
 					data-accuracy={accuracyRange(accuracy, status)}
 				>
 					{status === "idle" ? "0%" : `${accuracy}%`}
@@ -39,9 +39,9 @@ const Stats = () => {
 
 			{/* Time */}
 			<div className="max-sm:flex-1 flex flex-col items-center gap-y-2 sm:flex-row gap-x-3">
-				<span className="text-neutral-400 text-preset-3">Time:</span>
+				<span className="text-neutral-400 font-preset-3">Time:</span>
 				<span
-					className="text-preset-2 stat-value"
+					className="font-preset-2 stat-value"
 					data-time={timeRange(
 						mode,
 						status === "idle" ? null : timeLeft,
