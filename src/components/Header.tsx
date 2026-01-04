@@ -18,7 +18,7 @@ const Header = () => {
 
 			<div className="flex items-center gap-x-2.5">
 				<Trophy className="h-4.5" />
-				<div className="text-preset-4 text-neutral-400">
+				<div className="font-preset-4 text-neutral-400">
 					<span className="max-sm:hidden">Personal best: </span>
 					<span className="sm:hidden">Best </span>
 					<span className="text-white">{personalBest} WPM</span>

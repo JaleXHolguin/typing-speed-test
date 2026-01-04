@@ -21,7 +21,7 @@ const MobileRadioDropdown = <T extends string>({
 	return (
 		<DropdownMenu.Root>
 			<DropdownMenu.Trigger
-				className="sm:hidden max-sm:flex-1 h-7.75 inline-flex items-center justify-center gap-x-2.5 rounded-lg text-preset-5 border border-neutral-500 outline-none hover:border-blue-600 hover:text-blue-600 focus-visible:border-blue-600 focus-visible:text-blue-600 transition-colors not-disabled:cursor-pointer disabled:opacity-50 disabled:pointer-events-none"
+				className="sm:hidden max-sm:flex-1 h-7.75 inline-flex items-center justify-center gap-x-2.5 rounded-lg font-preset-5 border border-neutral-500 outline-none hover:border-blue-600 hover:text-blue-600 focus-visible:border-blue-600 focus-visible:text-blue-600 transition-colors not-disabled:cursor-pointer disabled:opacity-50 disabled:pointer-events-none"
 				disabled={disabled}
 			>
 				{labels[value]}
@@ -41,7 +41,7 @@ const MobileRadioDropdown = <T extends string>({
 						<DropdownMenu.RadioItem
 							key={key}
 							value={key}
-							className="group text-preset-5 h-9.25 inline-flex items-center gap-x-3 p-2.5 hover:bg-neutral-700 focus:bg-neutral-700 outline-none w-full"
+							className="group font-preset-5 h-9.25 inline-flex items-center gap-x-3 p-2.5 hover:bg-neutral-700 focus:bg-neutral-700 outline-none w-full"
 						>
 							<OptionNotSelected className="size-4 shrink-0 group-data-[state=checked]:hidden" />
 							<DropdownMenu.ItemIndicator>

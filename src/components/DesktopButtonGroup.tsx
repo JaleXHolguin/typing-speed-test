@@ -21,7 +21,7 @@ const DesktopButtonGroup = <T extends string>({
 
 	return (
 		<div className="hidden sm:inline-flex items-center gap-x-3.5">
-			<span id={titleId} className="text-preset-5 text-neutral-400">
+			<span id={titleId} className="font-preset-5 text-neutral-400">
 				{title}
 			</span>
 
@@ -37,7 +37,7 @@ const DesktopButtonGroup = <T extends string>({
 					<ToggleGroup.Item
 						key={key}
 						value={key}
-						className="px-2.25 py-1.25 h-7.75 text-white text-preset-5 rounded-md border border-neutral-500 hover:border-blue-600 data-[state=on]:border-blue-600 data-[state=off]:focus-visible:border-white custom-ring-focus transition-colors not-disabled:cursor-pointer disabled:opacity-50 disabled:pointer-events-none"
+						className="px-2.25 py-1.25 h-7.75 text-white font-preset-5 rounded-md border border-neutral-500 hover:border-blue-600 data-[state=on]:border-blue-600 data-[state=off]:focus-visible:border-white custom-ring-focus transition-colors not-disabled:cursor-pointer disabled:opacity-50 disabled:pointer-events-none"
 					>
 						{label}
 					</ToggleGroup.Item>
