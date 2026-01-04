@@ -1,9 +1,16 @@
+import { base64urlEncode, generatePayload } from "../helpers/share-encode";
 import Share from "../icons/Share";
+import { useTypingStore } from "../store/typing.store";
 import Button from "./Button";
 
 const ShareButton = () => {
+	const { wpm, accuracy, phrase } = useTypingStore();
+
 	const generateUrl = async () => {
-		/* TODO: Add url generation logic */
+		const payload = generatePayload(wpm, accuracy, phrase);
+		const encoded = base64urlEncode(payload);
+		const url = `${window.location.origin}/s/${encoded}`;
+		await navigator.clipboard.writeText(url);
 	};
 
 	return (

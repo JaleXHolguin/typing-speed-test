@@ -1,12 +1,10 @@
-import { accuracyRange } from "../helpers/stats-ranges";
 import BestWPM from "../icons/BestWPM";
 import Restart from "../icons/Restart";
 import TestCompleted from "../icons/TestCompleted";
 import { useTypingStore } from "../store/typing.store";
 import Button from "./Button";
-import Firework from "./Firework";
+import ResultsView from "./ResultsView";
 import ShareButton from "./ShareButton";
-import StatCard from "./StatCard";
 
 const ResultsBanner = () => {
 	const {
@@ -31,52 +29,22 @@ const ResultsBanner = () => {
 			? "You're getting faster. That was incredible typing."
 			: "Solid run. Keep pushing to beat your high score.";
 
-	const correctChars = phrase
+	const correct = phrase
 		? phrase.results.filter((r) => r === "correct").length
 		: 0;
-	const correctedChars = phrase
+	const corrected = phrase
 		? phrase.results.filter((r) => r === "corrected").length
 		: 0;
-	const incorrectChars = originalErrors.size;
+	const incorrect = originalErrors.size;
 
 	return (
-		<div className="flex flex-col items-center gap-y-8">
-			<div className="text-center">
-				<Icon
-					className={`m-auto ${
-						isNewPersonalBest ? "size-16 sm:20" : "size-19.5 sm:size-32"
-					}`}
-				/>
-
-				<h1 className="font-preset-1">{title}</h1>
-				<p className="font-preset-3 text-neutral-400">{description}</p>
-			</div>
-
-			<div className="w-full max-w-135 flex flex-col gap-4 sm:gap-5 sm:flex-row sm:py-5">
-				<StatCard label="WPM:">{wpm}</StatCard>
-				<StatCard label="Accuracy:">
-					<span
-						className="stat-value transition-none"
-						data-accuracy={accuracyRange(accuracy, "finished")}
-					>
-						{accuracy}%
-					</span>
-				</StatCard>
-				<StatCard label="Characters:">
-					<span className="text-green-500" title="Correct">
-						{correctChars}
-					</span>
-					<span className="text-neutral-500">/</span>
-					<span className="text-blue-600" title="Corrected">
-						{correctedChars}
-					</span>
-					<span className="text-neutral-500">/</span>
-					<span className="text-red-500" title="Incorrect">
-						{incorrectChars}
-					</span>
-				</StatCard>
-			</div>
-
+		<ResultsView
+			icon={Icon}
+			title={title}
+			description={description}
+			stats={{ wpm, accuracy, chars: { correct, corrected, incorrect } }}
+			showFirework={isNewPersonalBest}
+		>
 			<div className="w-full flex justify-center items-center gap-x-5">
 				<Button variant="primary" onClick={reset}>
 					Go Again
@@ -84,9 +52,7 @@ const ResultsBanner = () => {
 				</Button>
 				<ShareButton />
 			</div>
-
-			{isNewPersonalBest && <Firework />}
-		</div>
+		</ResultsView>
 	);
 };
 

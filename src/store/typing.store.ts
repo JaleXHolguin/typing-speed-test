@@ -176,7 +176,6 @@ export const useTypingStore = create<TypingState>((set, get) => ({
 
     const isFirstTest = previousBest === null;
     const isNewPersonalBest = previousBest !== null && wpm > previousBest;
-    console.log(phrase.results, phrase.chars.length);
 
     saveWpmResult({
       id: phrase.id,
