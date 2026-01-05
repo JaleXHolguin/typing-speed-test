@@ -1,7 +1,7 @@
 import type { ComponentProps, FC } from "react";
 import { tv, type VariantProps } from "tailwind-variants";
 
-const styles = tv({
+export const styles = tv({
 	base: "p-4 rounded-xl font-preset-3-semibold inline-flex items-center gap-x-2.5 custom-ring-focus transition-colors hover:cursor-pointer",
 	variants: {
 		variant: {

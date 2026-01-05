@@ -1,7 +1,9 @@
+import { Link } from "react-router";
 import LogoLarge from "../icons/LogoLarge";
 import LogoSmall from "../icons/LogoSmall";
 import Trophy from "../icons/Trophy";
 import { useTypingStore } from "../store/typing.store";
+import { styles } from "./Button";
 
 const Header = () => {
 	const personalBest = useTypingStore((state) => state.personalBest);
@@ -16,14 +18,17 @@ const Header = () => {
 				<LogoLarge className="max-sm:hidden h-10" />
 			</a>
 
-			<div className="flex items-center gap-x-2.5">
+			<Link
+				to="/history"
+				className={styles({ variant: "secondary", className: "p-2" })}
+			>
 				<Trophy className="h-4.5" />
 				<div className="font-preset-4 text-neutral-400">
 					<span className="max-sm:hidden">Personal best: </span>
 					<span className="sm:hidden">Best </span>
 					<span className="text-white">{personalBest} WPM</span>
 				</div>
-			</div>
+			</Link>
 		</header>
 	);
 };
