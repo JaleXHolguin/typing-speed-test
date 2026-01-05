@@ -48,6 +48,13 @@
   @apply mx-auto w-[calc(100%-2rem)] md:w-[calc(100%-4rem)] max-w-304;
 }
 
+@utility font-preset-404 {
+  font-weight: 800;
+  font-size: clamp(3.75rem, calc(2.2rem + 6.5vw), 8.75rem);
+  line-height: clamp(1, calc(0.95 + 0.3vw), 1.1);
+  letter-spacing: clamp(-0.04rem, calc(-0.03rem + -0.1vw), -0.08rem);
+}
+
 @utility font-preset-1 {
   font-weight: 700;
   font-size: clamp(1.5rem, calc(1.054rem + 1.902vw), 2.5rem);

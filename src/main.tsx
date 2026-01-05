@@ -6,6 +6,7 @@ import { BrowserRouter, Outlet, Route, Routes } from "react-router";
 import Header from "./components/Header.tsx";
 import History from "./components/History.tsx";
 import Main from "./components/Main.tsx";
+import NotFound from "./components/NotFound.tsx";
 import Shared from "./components/Shared.tsx";
 
 const container = document.getElementById("root");
@@ -26,6 +27,7 @@ createRoot(container).render(
 					<Route index element={<Main />} />
 					<Route path="s/:data" element={<Shared />} />
 					<Route path="history" element={<History />} />
+					<Route path="*" element={<NotFound />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>
