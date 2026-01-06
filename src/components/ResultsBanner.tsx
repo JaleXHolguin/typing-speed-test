@@ -3,6 +3,7 @@ import Restart from "../icons/Restart";
 import TestCompleted from "../icons/TestCompleted";
 import { useTypingStore } from "../store/typing.store";
 import Button from "./Button";
+import KeyboardHeatmap from "./KeyboardHeatmap";
 import ResultsView from "./ResultsView";
 import ShareButton from "./ShareButton";
 
@@ -14,6 +15,7 @@ const ResultsBanner = () => {
 		accuracy,
 		phrase,
 		originalErrors,
+		keyStats,
 		reset,
 	} = useTypingStore();
 
@@ -52,6 +54,8 @@ const ResultsBanner = () => {
 				</Button>
 				<ShareButton />
 			</div>
+
+			<KeyboardHeatmap keyStats={keyStats} />
 		</ResultsView>
 	);
 };
