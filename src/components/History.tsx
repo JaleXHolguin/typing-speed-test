@@ -14,8 +14,30 @@ const History = () => {
 		setHistory(data);
 	}, []);
 
+	const hasHistory = history.length > 0;
+
 	return (
 		<main className="wrapper">
+			<title>Typing History · Typing Speed Test</title>
+			<meta
+				name="description"
+				content={
+					hasHistory
+						? "Review your past typing speed tests, including WPM, accuracy, and performance trends."
+						: "You don't have any typing tests yet. Start a typing test to build your history."
+				}
+			/>
+			<meta property="og:title" content="Typing History · Typing Speed Test" />
+			<meta
+				property="og:description"
+				content={
+					hasHistory
+						? "Detailed history of your typing speed tests and performance statistics."
+						: "Start typing to generate your first typing speed test results."
+				}
+			/>
+			<meta property="og:type" content="website" />
+
 			<div className="mb-8 flex items-center justify-between">
 				<h1 className="font-preset-2">Typing History</h1>
 

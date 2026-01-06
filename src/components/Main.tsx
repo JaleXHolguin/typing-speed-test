@@ -8,6 +8,8 @@ export const Main = () => {
 
 	return (
 		<main className="wrapper">
+			<title>Typing Speed Test</title>
+
 			{status === "finished" ? (
 				<ResultsBanner />
 			) : (

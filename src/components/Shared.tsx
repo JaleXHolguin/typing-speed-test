@@ -42,6 +42,20 @@ const Shared = () => {
 	if (error || !data || !phrase) {
 		return (
 			<main className="wrapper">
+				<title>Shared result unavailable · Typing Test</title>
+				<meta
+					name="description"
+					content="This shared typing test result could not be loaded. The link may be invalid or expired."
+				/>
+				<meta
+					property="og:title"
+					content="Shared result unavailable · Typing Test"
+				/>
+				<meta
+					property="og:description"
+					content="The shared typing test result is invalid or no longer available."
+				/>
+
 				<ResultsView
 					icon={EmotionSad}
 					title="Unable to load the shared result"
@@ -55,8 +69,21 @@ const Shared = () => {
 	const isPerfect = accuracy === 100;
 	const chars = phrase.text.split("");
 
+	const title = isPerfect
+		? `Perfect typing result · ${wpm} WPM`
+		: `Shared typing result · ${wpm} WPM, ${accuracy}% accuracy`;
+
+	const description = isPerfect
+		? "Perfect accuracy — every character was typed correctly in this typing test."
+		: "View the shared typing test result, including speed and accuracy.";
+
 	return (
 		<main className="wrapper">
+			<title>{title}</title>
+			<meta name="description" content={description} />
+			<meta property="og:title" content={title} />
+			<meta property="og:description" content={description} />
+
 			<ResultsView
 				icon={Trophy}
 				title="Shared typing result"

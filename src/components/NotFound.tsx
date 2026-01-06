@@ -6,6 +6,8 @@ import { styles } from "./Button";
 const NotFound = () => {
 	return (
 		<div className="min-h-[calc(100vh-130px)] flex items-center justify-center p-8">
+			<title>404 · Page Not Found</title>
+
 			<div className="max-w-2xl w-full text-center">
 				<h1 className="font-preset-404">
 					<span className="text-green-500">4</span>
