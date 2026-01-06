@@ -6,6 +6,7 @@ const Home: FC<SVGProps<SVGSVGElement>> = (props) => (
 		fill="none"
 		stroke="currentColor"
 		viewBox="0 0 24 24"
+		aria-hidden="true"
 		{...props}
 	>
 		<path

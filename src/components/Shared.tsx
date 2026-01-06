@@ -29,8 +29,7 @@ const Shared = () => {
 		try {
 			const decoded = decodeSharePayload(params.data);
 			setData(decoded);
-		} catch (err) {
-			console.log(err);
+		} catch {
 			setError(true);
 		}
 	}, [params.data]);

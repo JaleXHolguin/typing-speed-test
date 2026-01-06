@@ -1,6 +1,6 @@
 import type { FC, SVGProps } from "react";
 
-const Share: FC<SVGProps<SVGSVGElement>> = (props) => (
+const Check: FC<SVGProps<SVGSVGElement>> = (props) => (
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		fill="none"
@@ -12,11 +12,8 @@ const Share: FC<SVGProps<SVGSVGElement>> = (props) => (
 		aria-hidden="true"
 		{...props}
 	>
-		<circle cx="18" cy="5" r="3" />
-		<circle cx="6" cy="12" r="3" />
-		<circle cx="18" cy="19" r="3" />
-		<path d="m8.6 13.5 6.8 4m0-11-6.8 4" />
+		<path d="M20 6 9 17l-5-5" />
 	</svg>
 );
 
-export default Share;
+export default Check;
