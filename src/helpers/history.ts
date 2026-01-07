@@ -21,17 +21,23 @@ export const formatDate = (timestamp: number) => {
   const now = new Date();
   const diffInHours = (now.getTime() - date.getTime()) / 36e5;
 
+  const time = date.toLocaleTimeString("en-US", {
+    hour: "2-digit",
+    minute: "2-digit",
+  });
+
   if (diffInHours < 24) {
-    return date.toLocaleTimeString("en-US", {
-      hour: "2-digit",
-      minute: "2-digit",
-    });
+    return time;
   }
 
-  if (diffInHours < 48) return "Yesterday";
+  if (diffInHours < 48) {
+    return `Yesterday · ${time}`;
+  }
 
-  return date.toLocaleDateString("en-US", {
+  const datePart = date.toLocaleDateString("en-US", {
     month: "short",
     day: "numeric",
   });
+
+  return `${datePart} · ${time}`;
 };

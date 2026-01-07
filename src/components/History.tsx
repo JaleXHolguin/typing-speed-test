@@ -60,9 +60,10 @@ const History = () => {
 						<h2 className="font-preset-3-semibold">Recent Tests</h2>
 
 						<div className="space-y-2">
-							{history.map((entry) => (
-								<HistoryItem key={entry.id} entry={entry} />
-							))}
+							{history.map((entry, i) => {
+								const key = `${entry.id}-${i}`;
+								return <HistoryItem key={key} entry={entry} />;
+							})}
 						</div>
 					</div>
 				</>
